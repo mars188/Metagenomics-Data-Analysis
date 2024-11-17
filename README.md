@@ -43,7 +43,7 @@ To access jubail web:
 ```
 https://ood.hpc.abudhabi.nyu.edu
 ```
-# The data
+# Step 0: Copying the data and creating the required directories 
 Run the following command on your terminal. 
 
 ```
@@ -59,4 +59,5 @@ ln -s /scratch/ma5877/metagenomics_workshop/data/analysis/redsea3/metawrap_qc/fi
 
 After performing the above action, you will find the following files in your directory
 
-The `redsea.sh` script for hands-on training and `metagenomic_D1.yml` is a complete workflow for day 1
+The `redsea.sh` script for hands-on training and 
+the `metagenomic_D1.yml` is a complete workflow for day 1
