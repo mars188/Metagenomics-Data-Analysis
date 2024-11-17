@@ -215,3 +215,81 @@ R CMD BATCH --no-save plot_bracken_P.R
 R CMD BATCH --no-save plot_bracken_G.R
 conda deactivate
 ```
+# Step 4: Metaphlan - For taxonomic classification of the reads, relative abundance and samples comparison with heatmap
+
+Here is how to load metaphlan. 
+```
+mkdir metaphlan4
+module purge
+module load all gencore/2
+module load metaphlan/4.0.1
+cd /scratch/$USER/metagenomics_workshop/day1
+```
+Run the `metaphlan --help` to look at the detailed flags used for metaphlan. 
+
+```
+metaphlan \
+clean_reads/redsea1/final_pure_reads_1.fastq,clean_reads/redsea1/final_pure_reads_2.fastq \
+--input_type fastq \
+--bowtie2out metaphlan4/redsea1.bowtie2out.txt \
+--nproc 24 \
+-o metaphlan4/redsea1_profile.txt
+
+metaphlan \
+clean_reads/redsea2/final_pure_reads_1.fastq,clean_reads/redsea2/final_pure_reads_2.fastq \
+--input_type fastq \
+--bowtie2out metaphlan4/redsea2.bowtie2out.txt \
+--nproc 24 \
+-o metaphlan4/redsea2_profile.txt
+
+metaphlan \
+clean_reads/redsea3/final_pure_reads_1.fastq,clean_reads/redsea3/final_pure_reads_2.fastq \
+--input_type fastq \
+--bowtie2out metaphlan4/redsea3.bowtie2out.txt \
+--nproc 24 \
+-o metaphlan4/redsea3_profile.txt
+```
+Now make the plots for visulising taxonomy at phylum and genus level. 
+
+```
+mkdir metaphlan4_plots
+cp metaphlan4/*_profile.txt metaphlan4_plots
+cd metaphlan4_plots
+merge_metaphlan_tables.py *_profile.txt > merged_abundance_table.txt
+
+grep -E "p__|clade" merged_abundance_table.txt | grep -v "c__" | sed "s/^.*|//g" | sed "s/clade_name[0-9]*-//g" > merged_abundance_table_phylum.txt
+grep -E "g__|clade" merged_abundance_table.txt | grep -v "s__" | sed "s/^.*|//g" | sed "s/clade_name[0-9]*-//g" > merged_abundance_table_genus.txt
+
+module purge
+module load gencore Miniconda3/4.7.10
+source activate /scratch/gencore/conda3/envs/hclust2_v99
+
+hclust2.py \
+-i merged_abundance_table_phylum.txt \
+-o metaphlan4_abundance_heatmap_P.png \
+--f_dist_f braycurtis \
+--s_dist_f braycurtis \
+--cell_aspect_ratio 1 \
+-l \
+--flabel_size 8 \
+--slabel_size 8 \
+--max_flabel_len 100 \
+--max_slabel_len 100 \
+--minv 0.1 \
+--dpi 1200 \
+--ftop 20
+
+hclust2.py \
+-i merged_abundance_table_genus.txt \
+-o metaphlan4_abundance_heatmap_G.png \
+--f_dist_f braycurtis \
+--s_dist_f braycurtis \
+--cell_aspect_ratio 0.3 \
+-l \
+--flabel_size 8 \
+--slabel_size 8 \
+--max_flabel_len 100 \
+--max_slabel_len 100 \
+--minv 0.1 \
+--dpi 1200 \
+--ftop 50
