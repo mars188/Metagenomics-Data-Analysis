@@ -18,3 +18,8 @@ Taxonomic annotation with Kraken2 and MetaPhlAn
 Functional annotation with HUMAnN 
 Assembly based analysis
 Binning, bin refinement, bin taxonomly and functional profiling 
+
+#Connecting to the HPC using a MAC machine
+Open the "Terminal" app and type ssh NetID@jubail.abudhabi.nyu.edu
+Enter your NYU password when prompted and hit enter
+Once logged in, navigate to your personal "SCRATCH" directory or the any other subdirecotry where you want to run this workshop
