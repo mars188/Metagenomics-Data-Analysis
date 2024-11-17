@@ -32,12 +32,10 @@ Binning, bin refinement, bin taxonomly and functional profiling
 # Setting up the environment and copying the data #
 We will be using the NYUAD High Performance Computing (HPC) cluster for this workshop, however, you can certainly run all of the analysis on any stand alone machine (server, personal laptop/Desktop etc.) provided that you have pre-installed the necessay software packages.
 
-` mkdir -p /scratch/$USER/TE_workshop
-
+`mkdir -p /scratch/$USER/TE_workshop
 cd /scratch/$USER/TE_workshop
-
 rsync -avP /scratch/ma5877/TE_workshop/data_files/ .`
 
 To access jubail web:
 
-https://ood.hpc.abudhabi.nyu.edu
+`https://ood.hpc.abudhabi.nyu.edu`
