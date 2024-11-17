@@ -36,6 +36,7 @@ We will be using the NYUAD High Performance Computing (HPC) cluster for this wor
 cd /scratch/$USER/TE_workshop
 rsync -avP /scratch/ma5877/TE_workshop/data_files/ .```
 
+
 To access jubail web:
 
-```https://ood.hpc.abudhabi.nyu.edu```
+`https://ood.hpc.abudhabi.nyu.edu`
