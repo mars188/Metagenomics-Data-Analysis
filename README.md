@@ -53,7 +53,7 @@ cp /scratch/ma5877/metagenomics_workshop/metagenomic_D1.yml .
 
 ln -s /scratch/ma5877/metagenomics_workshop/data/analysis/redsea1/metawrap_qc/final*fastq clean_reads/redsea1/
 ln -s /scratch/ma5877/metagenomics_workshop/data/analysis/redsea2/metawrap_qc/final*fastq clean_reads/redsea2/
-ln -s /scratch/ma5877/metagenomics_workshop/data/analysis/redsea3/metawrap_qc/final*fastq clean_reads/redsea3/![image](https://github.com/user-attachments/assets/88266553-3ecc-4139-af7f-a4ef4252c5a2)
+ln -s /scratch/ma5877/metagenomics_workshop/data/analysis/redsea3/metawrap_qc/final*fastq clean_reads/redsea3/
 
 ```
 
