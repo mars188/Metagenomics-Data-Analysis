@@ -72,18 +72,18 @@ module load all gencore/2
 module load kraken2/2.1.2
 ```
 
-Run the `kraken2 --help` to pull the detailed flags and then fill the emply spaces in the script below.
+Run the `kraken2 --help` to pull the detailed flags and then fill the empty spaces with asterik (*) in the script below.
  ```
 kraken2 \
 --* /scratch/Reference_Genomes/In_house/Metagenomic/kraken2/krakendb_bacteria/ \
--- \
--- kraken2/redsea1_unclassified#.fastq \
+--* \
+--* kraken2/redsea1_unclassified#.fastq \
 clean_reads/redsea1/final_pure_reads_1.fastq \
 clean_reads/redsea1/final_pure_reads_2.fastq \
--- \
--- kraken2/redsea1_k2report.txt \
--- 24 \
--- kraken2/redsea1.kraken
+--* \
+--* kraken2/redsea1_k2report.txt \
+--* 24 \
+--* kraken2/redsea1.kraken
 
 kraken2 \
 -- /scratch/Reference_Genomes/In_house/Metagenomic/kraken2/krakendb_bacteria/ \
