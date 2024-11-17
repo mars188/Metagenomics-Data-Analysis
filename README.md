@@ -108,3 +108,109 @@ clean_reads/redsea3/final_pure_reads_2.fastq \
 --* 24 \
 --* kraken2/redsea3.kraken
 ```
+# Step 2: Running the Bracken for abundance estimation from kraken2 data at Phylum and Genus level
+
+Here is how to load bracken and create the required directories
+```
+module purge
+module load all gencore/2
+module load bracken/2.8
+
+mkdir -p bracken
+mkdir -p bracken/phylum
+mkdir -p bracken/genus
+```
+
+Run the `bracken --help` to pull the detailed flags and then fill the empty spaces with asterik (*) in the script below.
+```
+bracken \
+-* /scratch/Reference_Genomes/In_house/Metagenomic/kraken2/krakendb_bacteria \
+-* kraken2/redsea1_k2report.txt \
+-* bracken/phylum/redsea1 \
+-* 90 \
+-* P \
+-* 5 > bracken/phylum/P_log.txt
+
+bracken \
+-* /scratch/Reference_Genomes/In_house/Metagenomic/kraken2/krakendb_bacteria \
+-* kraken2/redsea1_k2report.txt \
+-* bracken/genus/redsea1 \
+-* 90 \
+-* G \
+-* 5 > bracken/genus/G_log.txt
+
+bracken \
+-* /scratch/Reference_Genomes/In_house/Metagenomic/kraken2/krakendb_bacteria \
+-* kraken2/redsea2_k2report.txt \
+-* bracken/phylum/redsea2 \
+-* 90 \
+-* P \
+-* 5 > bracken/phylum/P_log.txt
+
+bracken \
+-* /scratch/Reference_Genomes/In_house/Metagenomic/kraken2/krakendb_bacteria \
+-* kraken2/redsea2_k2report.txt \
+-* bracken/genus/redsea2 \
+-* 90 \
+-* G \
+-* 5 > bracken/genus/G_log.txt
+
+bracken \
+-* /scratch/Reference_Genomes/In_house/Metagenomic/kraken2/krakendb_bacteria \
+-* kraken2/redsea3_k2report.txt \
+-* bracken/phylum/redsea3 \
+-* 90 \
+-* P \
+-* 5 > bracken/phylum/P_log.txt
+
+bracken \
+-* /scratch/Reference_Genomes/In_house/Metagenomic/kraken2/krakendb_bacteria \
+-* kraken2/redsea3_k2report.txt \
+-* bracken/genus/redsea3 \
+-* 90 \
+-* G \
+-* 5 > bracken/genus/G_log.txt
+```
+This removes the extra intermediate file not needed for further analysis. 
+```
+rm kraken2/*genuses.txt
+rm kraken2/*phylums.txt
+```
+# Step 3: Merging the bracken files and visualising the abundance results 
+
+```
+cd /scratch/$USER/workshop/day1
+mkdir -p merge_brackenP
+mkdir -p merge_brackenG
+mkdir -p merge_bracken
+
+cp bracken/phylum/redsea* merge_brackenP
+cd merge_brackenP
+python /scratch/gencore/ma5877/workflows/Tax_data_convert_kraken2.py \
+-i redsea* \
+-c 1 \
+-o ../merge_bracken/All_data_bracken_merged_P.tsv
+
+cd ../merge_bracken
+sed s/Clade_name/Phylum/ All_data_bracken_merged_P.tsv > All_data_bracken_merged_P_new.tsv
+cd ../
+cp bracken/genus/redsea* merge_brackenG
+cd merge_brackenG
+
+python /scratch/gencore/ma5877/workflows/Tax_data_convert_kraken2.py \
+-i redsea* \
+-c 1 \
+-o ../merge_bracken/All_data_bracken_merged_G.tsv
+
+cd ../merge_bracken
+
+sed s/Clade_name/Genus/ All_data_bracken_merged_G.tsv > All_data_bracken_merged_G_new.tsv
+
+module purge
+module load gencore Miniconda3/4.7.10
+source activate /scratch/gencore/conda3/envs/rbase_4.2.1
+cp /scratch/ma5877/metagenomics_workshop/scripts/plot_bracken_* .
+R CMD BATCH --no-save plot_bracken_P.R
+R CMD BATCH --no-save plot_bracken_G.R
+conda deactivate
+```
