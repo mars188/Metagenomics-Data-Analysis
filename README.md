@@ -62,4 +62,4 @@ After performing the above action, you will find the following files in your dir
 The `redsea.sh` script for hands-on training and 
 the `metagenomic_D1.yml` is a complete workflow for day 1
 
-#Step 1: Running the Kraken2 for taxonomic classification
+# Step 1: Running the Kraken2 for taxonomic classification
