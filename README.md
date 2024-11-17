@@ -44,6 +44,19 @@ To access jubail web:
 https://ood.hpc.abudhabi.nyu.edu
 ```
 # The data
+Run the following on your terminal. 
+
+```
+mkdir -p clean_reads/redsea1 clean_reads/redsea2 clean_reads/redsea3 
+cp /scratch/ma5877/metagenomics_workshop/redsea.sh .
+cp /scratch/ma5877/metagenomics_workshop/metagenomic_D1.yml .
+
+ln -s /scratch/ma5877/metagenomics_workshop/data/analysis/redsea1/metawrap_qc/final*fastq clean_reads/redsea1/
+ln -s /scratch/ma5877/metagenomics_workshop/data/analysis/redsea2/metawrap_qc/final*fastq clean_reads/redsea2/
+ln -s /scratch/ma5877/metagenomics_workshop/data/analysis/redsea3/metawrap_qc/final*fastq clean_reads/redsea3/![image](https://github.com/user-attachments/assets/88266553-3ecc-4139-af7f-a4ef4252c5a2)
+
+```
+
 After performing the above action, you will find the following files in your directory
 
 The `redsea.sh` for hands-on training and `metagenomic_D1.yml` is a complete workflow for day 1 
