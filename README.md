@@ -177,6 +177,7 @@ rm kraken2/*genuses.txt
 rm kraken2/*phylums.txt
 ```
 # Step 3: Merging the bracken files and visualising the abundance results 
+Run the following script to create files and visualize the results. 
 
 ```
 cd /scratch/$USER/workshop/day1
