@@ -38,4 +38,4 @@ rsync -avP /scratch/ma5877/TE_workshop/data_files/ .```
 
 To access jubail web:
 
-`https://ood.hpc.abudhabi.nyu.edu`
+```https://ood.hpc.abudhabi.nyu.edu```
