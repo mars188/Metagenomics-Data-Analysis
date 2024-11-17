@@ -86,25 +86,25 @@ clean_reads/redsea1/final_pure_reads_2.fastq \
 --* kraken2/redsea1.kraken
 
 kraken2 \
--- /scratch/Reference_Genomes/In_house/Metagenomic/kraken2/krakendb_bacteria/ \
--- \
--- kraken2/redsea2_unclassified#.fastq \
+--* /scratch/Reference_Genomes/In_house/Metagenomic/kraken2/krakendb_bacteria/ \
+--* \
+--* kraken2/redsea2_unclassified#.fastq \
 clean_reads/redsea2/final_pure_reads_1.fastq \
  clean_reads/redsea2/final_pure_reads_2.fastq \
--- \
--- kraken2/redsea2_k2report.txt \
--- 24 \
--- kraken2/redsea2.kraken
+--* \
+--* kraken2/redsea2_k2report.txt \
+--* 24 \
+--* kraken2/redsea2.kraken
 
 
 kraken2 \
--- /scratch/Reference_Genomes/In_house/Metagenomic/kraken2/krakendb_bacteria/ \
--- \
--- kraken2/redsea3_unclassified#.fastq \
+--* /scratch/Reference_Genomes/In_house/Metagenomic/kraken2/krakendb_bacteria/ \
+--* \
+--* kraken2/redsea3_unclassified#.fastq \
 clean_reads/redsea3/final_pure_reads_1.fastq \
 clean_reads/redsea3/final_pure_reads_2.fastq \
--- \
--- kraken2/redsea3_k2report.txt \
--- 24 \
--- kraken2/redsea3.kraken
+--* \
+--* kraken2/redsea3_k2report.txt \
+--* 24 \
+--* kraken2/redsea3.kraken
 ```
