@@ -296,3 +296,16 @@ hclust2.py \
 --ftop 50
 ```
 # Submitting the workflow with Biosails
+We need to run two main commands of biosails as given below. 
+
+```
+cd /scratch/$USER/metagenomics_workshop
+
+module purge
+module load gencore
+module load gencore_biosails
+
+biox run -w metagenomic_D1.yml -o day1.sh
+
+hpcrunner.pl submit_jobs -i day1.sh --project day1_run
+```
