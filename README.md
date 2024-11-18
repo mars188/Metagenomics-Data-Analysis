@@ -63,7 +63,7 @@ To access jubail web:
 ```
 https://ood.hpc.abudhabi.nyu.edu
 ```
-# Step 1: Running the Kraken2 for taxonomic classification
+# Step 1: Hands-on training with Kraken2 for taxonomic classification
 Here is how to load the kraken2 module. 
 
 ```
