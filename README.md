@@ -34,17 +34,10 @@ We will be using the NYUAD High Performance Computing (HPC) cluster for this wor
 
 ```
 mkdir -p /scratch/$USER/metagenomics_workshop
-mkdir -p /scratch/$USER/metagenomics_workshop/day1
-mkdir -p /scratch/$USER/metagenomics_workshop/day1/clean_reads
-cd /scratch/$USER/metagenomics_workshop/
-cp /scratch/ma5877/metagenomics_workshop/redsea.sh .
+mkdir -p /scratch/$USER/metagenomics_workshop/hands-on
+mkdir -p /scratch/$USER/metagenomics_workshop/hands-on/clean_reads
+cd /scratch/$USER/metagenomics_workshop/hands-on
 
-```
-
-To access jubail web:
-
-```
-https://ood.hpc.abudhabi.nyu.edu
 ```
 # Step 0: Copying the data and creating the required directories 
 Run the following command on your terminal. 
@@ -52,7 +45,6 @@ Run the following command on your terminal.
 ```
 mkdir -p clean_reads/redsea1 clean_reads/redsea2 clean_reads/redsea3 
 cp /scratch/ma5877/metagenomics_workshop/redsea.sh .
-cp /scratch/ma5877/metagenomics_workshop/metagenomic_D1.yml .
 
 ln -s /scratch/ma5877/metagenomics_workshop/data/analysis/redsea1/metawrap_qc/final*fastq clean_reads/redsea1/
 ln -s /scratch/ma5877/metagenomics_workshop/data/analysis/redsea2/metawrap_qc/final*fastq clean_reads/redsea2/
@@ -65,6 +57,11 @@ After performing the above action, you will find the following files in your dir
 The `redsea.sh` script for hands-on training and 
 the `metagenomic_D1.yml` is a complete workflow for day 1
 
+To access jubail web:
+
+```
+https://ood.hpc.abudhabi.nyu.edu
+```
 # Step 1: Running the Kraken2 for taxonomic classification
 Here is how to load the kraken2 module. 
 
