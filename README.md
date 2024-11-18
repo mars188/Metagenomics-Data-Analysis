@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/5c8118a0-7acf-4c60-9a47-fab78fd3787a)# Metagenomics-Data-Analysis
+# Metagenomics-Data-Analysis
 This page describes the steps to perform the NYUAD Core Bioinformatics hands-on workshop on Metagenomics data analysis and visulizing the results.
 
 During this workshop, participants will learn about the concepts and steps involved in analyzing the metagenomic data obtained from short read high throughput sequencing.
