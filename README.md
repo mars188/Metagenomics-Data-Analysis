@@ -37,7 +37,7 @@ mkdir -p /scratch/$USER/metagenomics_workshop
 mkdir -p /scratch/$USER/metagenomics_workshop/day1
 mkdir -p /scratch/$USER/metagenomics_workshop/day1/clean_reads
 cd /scratch/$USER/metagenomics_workshop/
-cp /scratch/ma5877/metagenomics_workshop/metagenomic_D1.yml .
+cp /scratch/ma5877/metagenomics_workshop/redsea.sh .
 
 ```
 
