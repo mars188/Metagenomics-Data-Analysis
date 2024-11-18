@@ -1,4 +1,4 @@
-# Metagenomics-Data-Analysis
+![image](https://github.com/user-attachments/assets/5c8118a0-7acf-4c60-9a47-fab78fd3787a)# Metagenomics-Data-Analysis
 This page describes the steps to perform the NYUAD Core Bioinformatics hands-on workshop on Metagenomics data analysis and visulizing the results.
 
 During this workshop, participants will learn about the concepts and steps involved in analyzing the metagenomic data obtained from short read high throughput sequencing.
@@ -33,9 +33,12 @@ Binning, bin refinement, bin taxonomly and functional profiling
 We will be using the NYUAD High Performance Computing (HPC) cluster for this workshop, however, you can certainly run all of the analysis on any stand alone machine (server, personal laptop/Desktop etc.) provided that you have pre-installed the necessay software packages.
 
 ```
-mkdir -p /scratch/$USER/TE_workshop 
-cd /scratch/$USER/TE_workshop
-rsync -avP /scratch/ma5877/TE_workshop/data_files/ .
+mkdir -p /scratch/$USER/metagenomics_workshop
+mkdir -p /scratch/$USER/metagenomics_workshop/day1
+mkdir -p /scratch/$USER/metagenomics_workshop/day1/clean_reads
+cd /scratch/$USER/metagenomics_workshop/
+cp /scratch/ma5877/metagenomics_workshop/metagenomic_D1.yml .
+
 ```
 
 To access jubail web:
