@@ -45,7 +45,6 @@ Run the following command on your terminal.
 ```
 mkdir -p clean_reads/redsea1 clean_reads/redsea2 clean_reads/redsea3 
 cp /scratch/ma5877/metagenomics_workshop/redsea.sh .
-cp /scratch/ma5877/metagenomics_workshop/metagenomic_D1.yml .
 
 ln -s /scratch/ma5877/metagenomics_workshop/data/analysis/redsea1/metawrap_qc/final*fastq clean_reads/redsea1/
 ln -s /scratch/ma5877/metagenomics_workshop/data/analysis/redsea2/metawrap_qc/final*fastq clean_reads/redsea2/
