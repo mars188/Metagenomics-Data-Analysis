@@ -222,7 +222,7 @@ mkdir metaphlan4
 module purge
 module load all gencore/2
 module load metaphlan/4.0.1
-cd /scratch/$USER/metagenomics_workshop/day1
+cd /scratch/$USER/metagenomics_workshop/hands-on
 ```
 Run the `metaphlan --help` to look at the detailed flags used for metaphlan. 
 
@@ -298,6 +298,7 @@ We need to run two main commands of biosails as given below.
 
 ```
 cd /scratch/$USER/metagenomics_workshop
+cp /scratch/ma5877/metagenomics_workshop/metagenomic_D1.yml .
 
 module purge
 module load gencore
