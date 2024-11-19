@@ -181,7 +181,7 @@ rm kraken2/*phylums.txt
 Run the following script to create files and visualize the results. 
 
 ```
-cd /scratch/$USER/workshop/day1
+cd /scratch/$USER/metagenomics_workshop/hands-on
 mkdir -p merge_brackenP
 mkdir -p merge_brackenG
 mkdir -p merge_bracken
