@@ -66,7 +66,6 @@ https://ood.hpc.abudhabi.nyu.edu
 Here is how to load the kraken2 module. 
 
 ```
-mkdir kraken2
 module purge
 module load all gencore/2
 module load kraken2/2.1.2
